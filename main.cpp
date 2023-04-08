@@ -22,20 +22,18 @@ int get_digits(int num_dec, int out_basis){
 }
 
 
-/*
-int basis_to_decimal(int* num_b[], int in_basis){
+int basis_to_decimal(int num_b[], int in_basis){
     // Converts a given number in certain basis to decimal.
 
-    int digits = sizeof(num_b) / sizeof(num_b[0]);
+    int digits = sizeof(num_b);
     int num_dec = 0;
 
     for(int i = 0; i < digits; i = i + 1){
         num_dec = num_dec + num_b[digits-1-i] * pow(in_basis, i);
     }
 
-    cout << "decimal: " << num_dec << endl;
+    return num_dec;
 }
-*/
 
 
 int* decimal_to_basis(int num_dec, int out_basis){
@@ -60,12 +58,17 @@ int* decimal_to_basis(int num_dec, int out_basis){
     return num_b;
 }
 
+/*
+int* convert_basis(int num_b[], int in_basis, int out_basis){
+    return 0;
+}
+*/
 
 int main(){
     // Basis to decimal test:
-    //int num_b[] = {1,0,0,0,1,0,0,0};
-    //int in_basis = 2;
-    //cout << basis_to_decimal(num_b, in_basis) << endl;
+    int num_b[] = {1,0,0,0,1,0,0,0};
+    int in_basis = 2;
+    cout << basis_to_decimal(num_b, in_basis) << endl;
 
     // Decimal to basis test:
     int num_dec = 136;
@@ -81,5 +84,6 @@ int main(){
     // Basis to basis test:
 
     delete[] decimal_to_basis(num_dec, out_basis);
+
     return 0;
 }
