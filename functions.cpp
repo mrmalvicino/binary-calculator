@@ -2,12 +2,6 @@
 #include "functions.h"
 
 void print_array(int arr[], int size){
-    /**
-     * @brief Prints a one dimentional array of integers in terminal.
-     * @param arr Memory adress of the array.
-     * @param size Number of components of the array.
-     */
-    
     for (int i = 0; i < size - 1; i ++){
         std::cout << arr[i] << " ";
     }
